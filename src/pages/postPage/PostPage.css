@@ -92,6 +92,11 @@
     padding: 18px 0;
     max-width: 200px;
     word-wrap: break-word;
+    text-transform: capitalize;
+}
+
+.post-page .content .post-head .grid-item .post-info h3 sup{
+    text-transform: lowercase;
 }
 
 .post-page .content .post-head .grid-item .likes{

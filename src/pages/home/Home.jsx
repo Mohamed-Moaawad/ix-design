@@ -17,9 +17,6 @@ import { useState } from 'react';
 const Home = () => { 
     const [user , loading, error] = useAuthState(auth)
 
-    // console.log(user.displayName);
-
-
     const [navData, setNavData] = useState('')
     
     // Get Data from navbar from input search

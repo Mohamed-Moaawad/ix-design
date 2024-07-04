@@ -20,6 +20,7 @@ import { auth, db, storageDB } from '../../firebase/config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -29,8 +30,8 @@ const AddPost = () => {
     const [openInputs, setOpenInputs] = useState(true)
 
     const [user, loading, error] = useAuthState(auth)
-    // console.log(user)
 
+    
     const [title, setTitle] = useState('');
     const [type, setType] = useState('');
     const [image, setImage] = useState('');
@@ -80,68 +81,75 @@ const AddPost = () => {
         setImageName('')
     };
 
+    const navigate = useNavigate()
 
-    return (
-        <div className='add-post-page'>
-            {/* start navbar */}
-            <Navbar path={''} disabled={true}/>
-            {/* end navbar */}
-            <div className="content">
-                <h3>create post</h3>
-                <Grid container sx={{px:'20px'}}>
+    if(!user){
+        navigate('/', {replace: true})
+    }
 
-                    <Grid item xs={12} md={7} className='grid-item grid-form'>
-                        <form>
-                            <TextField id="outlined-basic" label="Title" variant="outlined"
-                                value={title}
-                                onChange={(e)=> setTitle(e.target.value)}
-                                disabled={openInputs}
-                            />
-
-                            <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">Type</InputLabel>
-                                <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={type}
-                                label="Age"
-                                onChange={(e)=> setType(e.target.value)}
-                                disabled={openInputs}
-                                >
-                                    <MenuItem value='photo'>photo</MenuItem>
-                                    <MenuItem value='background'>background</MenuItem>
-                                    <MenuItem value='logo'>logo</MenuItem>
-                                    <MenuItem value='vector'>vector</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </form>
-                    </Grid>
-
-                    <Grid item xs={12} md={5} className='grid-item'>
-                        <div className="upload-image">
-                            <div className="upload-box">
-                                
-                                <CloudUploadIcon />
-                                <h5>select image here.</h5>
-                                <span>{imageName}</span>
-                                <input type="file" name="" id=""
-                                    onChange={handleUpload}
+    if(user){
+        return (
+            <div className='add-post-page'>
+                {/* start navbar */}
+                <Navbar path={''} disabled={true}/>
+                {/* end navbar */}
+                <div className="content">
+                    <h3>create post</h3>
+                    <Grid container sx={{px:'20px'}}>
+    
+                        <Grid item xs={12} md={7} className='grid-item grid-form'>
+                            <form>
+                                <TextField id="outlined-basic" label="Title" variant="outlined"
+                                    value={title}
+                                    onChange={(e)=> setTitle(e.target.value.toLowerCase())}
+                                    disabled={openInputs}
                                 />
+    
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Type</InputLabel>
+                                    <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={type}
+                                    label="Age"
+                                    onChange={(e)=> setType(e.target.value)}
+                                    disabled={openInputs}
+                                    >
+                                        <MenuItem value='photo'>photo</MenuItem>
+                                        <MenuItem value='background'>background</MenuItem>
+                                        <MenuItem value='logo'>logo</MenuItem>
+                                        <MenuItem value='vector'>vector</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </form>
+                        </Grid>
+    
+                        <Grid item xs={12} md={5} className='grid-item'>
+                            <div className="upload-image">
+                                <div className="upload-box">
+                                    
+                                    <CloudUploadIcon />
+                                    <h5>select image here.</h5>
+                                    <span>{imageName}</span>
+                                    <input type="file" name="" id=""
+                                        onChange={handleUpload}
+                                    />
+                                </div>
+                                <Divider sx={{my:'20px'}} />
+                                <Button variant="contained" endIcon={<CloudUploadIcon />}
+                                    onClick={createPost}
+                                    disabled={openInputs}
+                                >
+                                    publish
+                                </Button>
                             </div>
-                            <Divider sx={{my:'20px'}} />
-                            <Button variant="contained" endIcon={<CloudUploadIcon />}
-                                onClick={createPost}
-                                disabled={openInputs}
-                            >
-                                publish
-                            </Button>
-                        </div>
+                        </Grid>
+    
                     </Grid>
-
-                </Grid>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default AddPost

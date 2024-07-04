@@ -8,23 +8,15 @@ import IconButton from '@mui/material/IconButton';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../../firebase/config';
 
-//
-// Firebase
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import { auth } from '../../../firebase/config';
 
 
 
-
-const PostItem = ({item, deleteIcon}) => {
-    // const [user, loading, error] = useAuthState(auth)
-    
+const PostItem = ({item, deleteIcon}) => {    
 
     // Function Delete Post 
     const deletePost = async()=>{
         await deleteDoc(doc(db, 'Posts', `${item.id}`))
     }
-
 
     return (
         <div className='post-item'>

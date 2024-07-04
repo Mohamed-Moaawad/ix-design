@@ -77,7 +77,7 @@ const Navbar = ({onDataChange, disabled, path}) => {
     const inputChange = (e)=>{
         setInputValue(e.target.value)
         // ببعت للهوم داتا من الفنكشن دي
-        onDataChange(e.target.value)
+        onDataChange(e.target.value.toLowerCase())
     }
 
     const navigate = useNavigate()

@@ -27,8 +27,9 @@ const AllPosts = ({navData}) => {
   const [value, loading, error] = useCollection(initialValue);
 
 
+
   useEffect(()=>{
-    setInitialValue(navData !== '' ? query(collection(db, "Posts"), where('title', '<=', navData)) : query(collection(db, "Posts"), orderBy("time", "desc")))
+    setInitialValue(navData !== '' ? query(collection(db, "Posts"), where('title', '==', navData)) : query(collection(db, "Posts"), orderBy("time", "desc")))
   },[navData])
 
 

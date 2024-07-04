@@ -37,10 +37,6 @@ const PostPage = () => {
     const [value, loading, error] = useDocument(doc(db, 'Posts', `${id}`))
     
     const [user, loadingg, errorr] = useAuthState(auth)
-    // console.log(user);
-
-    
-    
 
     const navigate = useNavigate()
 

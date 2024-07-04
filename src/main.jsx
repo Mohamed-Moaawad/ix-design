@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 // Pages 
 import Register from './pages/register/Register';
-import SignUp from './components/forms/signUp/SignUp';
 import SignIn from './components/forms/signIn/SignIn';
 import ForgotPassword from './components/forms/signIn/forgotPassword/ForgotPassword';
 import Home from './pages/home/Home';

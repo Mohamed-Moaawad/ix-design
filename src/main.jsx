@@ -21,6 +21,11 @@ import NotFoundPage from './pages/notFoundPage/NotFoundPage';
 
 const router = createBrowserRouter([
   {
+    path: '/',
+    element: <Home />,
+    errorElement: <NotFoundPage />,
+  },
+  {
     path: "/register",
     element: <Register />,
     children:[
@@ -33,11 +38,6 @@ const router = createBrowserRouter([
         element: <ForgotPassword />
       }
     ]
-  },
-  {
-    path: '/',
-    element: <Home />,
-    errorElement: <NotFoundPage />,
   },
   {
     path: '/add-post',

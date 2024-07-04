@@ -16,6 +16,7 @@ import PostPage from './pages/postPage/PostPage';
 import Profile from './pages/profile/Profile';
 import EditProfile from './pages/profile/editProfile/EditProfile';
 import UserProfile from './pages/userProile/UserProfile';
+import NotFoundPage from './pages/notFoundPage/NotFoundPage';
 
 
 
@@ -23,7 +24,6 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
-    errorElement: <h1>Error ELement</h1>,
     children:[
       {
         path: 'signin',
@@ -37,7 +37,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/',
-    element: <Home />
+    element: <Home />,
+    errorElement: <NotFoundPage />,
   },
   {
     path: '/add-post',

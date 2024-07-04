@@ -1,0 +1,74 @@
+.not-found-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.not-found-page .grid-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.not-found-page .img{
+    width: 500px;
+}
+.not-found-page .img img{
+    width: 100%;
+}
+
+.not-found-page .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.not-found-page .text h3{
+    font-size: 35px;
+    color: var(--text-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.not-found-page .text p{
+    color: var(--text-gray-color);
+    max-width: 70%;
+}
+
+.not-found-page .text button{
+    background-color: var(--main-color);
+}
+
+@media only screen and (max-width: 410px){
+    .not-found-page .text h3{
+        font-size: 30px;
+    }
+    
+    .not-found-page .text p{
+        font-size: 14px;
+        max-width: 80%;
+    }
+}
+@media only screen and (max-width: 356px){
+    .not-found-page .text h3{
+        font-size: 25px;
+    }
+    
+    .not-found-page .text p{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 325px){
+    .not-found-page .text h3{
+        font-size: 20px;
+    }
+    
+    .not-found-page .text p{
+        font-size: 12px;
+    }
+}

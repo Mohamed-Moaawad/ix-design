@@ -1,0 +1,126 @@
+.sign-up-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media only screen and (max-width:600px){
+    .sign-up-page .box-container{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:470px){
+    .sign-up-page .box-container{
+        width: 95%;
+    }
+}
+
+
+.sign-up-page form{
+    width: 400px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width:770px){
+    .sign-up-page form{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .sign-up-page form{
+        width: 100%;
+    }
+}
+
+.sign-up-page form img.small-logo{
+    width: 80px;
+    display: none;
+}
+
+@media only screen and (max-width:600px){
+    .sign-up-page form img.small-logo{
+        display: block;
+    }
+}
+
+.sign-up-page form h6{
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--gray-color);
+    margin-top: 10px;
+}
+
+.sign-up-page form h6::first-letter{
+    text-transform: capitalize;
+}
+
+.sign-up-page form h3{
+    font-size: 30px;
+    color: var(--text-color);
+}
+
+.sign-up-page form button.btn-google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.sign-up-page form button.btn-google span.icon-google{
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    margin-right: 15px;
+}
+
+.sign-up-page form button.btn-google span.icon-google img{
+    width: 100%;
+    height: 100%;
+}
+
+.sign-up-page form p{
+    margin: 10px 0;
+}
+
+.sign-up-page form p a{
+    color: var(--main-color)
+}
+
+/* ==================================
+    start inputs and button submit
+===================================== */
+.sign-up-page form .MuiFormControl-root{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.sign-up-page form div.pass{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sign-up-page form div.pass .MuiFormControl-root{
+    width: 45%;
+}
+
+.sign-up-page form .btn-submit{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sign-up-page form button[type="submit"]{
+    margin-top: 30px;
+    width: 50%;
+    background-color: var(--main-color);
+}

@@ -1,0 +1,95 @@
+.sign-in-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media only screen and (max-width:600px){
+    .sign-in-page .box-container{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:470px){
+    .sign-in-page .box-container{
+        width: 95%;
+    }
+}
+
+
+.sign-in-page form{
+    width: 400px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width:770px){
+    .sign-in-page form{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .sign-in-page form{
+        width: 100%;
+    }
+}
+
+.sign-in-page form img.small-logo{
+    width: 80px;
+    display: none;
+}
+
+@media only screen and (max-width:600px){
+    .sign-in-page form img.small-logo{
+        display: block;
+    }
+}
+
+
+.sign-in-page form h3{
+    font-size: 30px;
+    color: #222;
+}
+
+
+.sign-in-page form p.new-user{
+    margin: 15px 0;
+}
+
+.sign-in-page form p.new-user a{
+    color: var(--main-color)
+}
+
+/* ==================================
+    start inputs and button submit
+===================================== */
+.sign-in-page form .MuiFormControl-root{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.sign-in-page form a.forgot{
+    color: var(--main-color);
+    cursor: pointer;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.sign-in-page form p.forgot::first-letter{
+    text-transform: capitalize;
+}
+
+.sign-in-page form .btn-submit{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sign-in-page form button[type="submit"]{
+    margin-top: 30px;
+    width: 50%;
+    background-color: var(--main-color);
+
+}

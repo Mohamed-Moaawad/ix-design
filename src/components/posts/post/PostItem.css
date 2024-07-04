@@ -1,0 +1,75 @@
+.post-item{
+    width: 100%;
+}
+
+.post-item a{
+    text-decoration: none;
+}
+
+.post-item .img{
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 5px #99999923;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.post-item .img::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+    top: 0;
+    left: 0;
+    transition: all .3s;
+    opacity: 0;
+}
+
+.post-item .img:hover::before{
+    opacity: 1;
+}
+
+.post-item .img:hover P{
+    color: #fff;
+}
+
+.post-item .img img{
+    width: 100%;
+    height: auto;
+}
+
+.post-item .img p{
+    position: absolute;
+    bottom: 15px;
+    left: 2px;
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+.post-item .img p::first-letter{
+    text-transform: capitalize;
+}
+
+.post-item .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.post-item .info .avatar-user{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+}
+
+.post-item .info .avatar-user h6{
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 12px;
+}
+.post-item .info .avatar-user h6:hover{
+    text-decoration: underline;
+}

@@ -49,6 +49,12 @@
     font-size: 20px;
     color: var(--text-gray-color);
 }
+.add-post-page .content .grid-item .upload-image .upload-box span{
+    max-width: 90%;
+    word-break: break-all;
+    text-align: center;
+    font-size: 12px;
+}
 
 .add-post-page .content .grid-item .upload-image .upload-box input{
     position: absolute;

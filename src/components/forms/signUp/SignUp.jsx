@@ -175,10 +175,6 @@ const [loader, setLoader] = useState(false)
 
 
 
-
-
-
-
     return (
         <div className='sign-up-page'>
             <Box 

@@ -160,7 +160,7 @@ const [loader, setLoader] = useState(false)
 
             setTimeout(()=>{
                 navigate('/')
-            },7000)
+            },3000)
 
 
         })

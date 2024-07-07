@@ -81,7 +81,7 @@ const ForgotPassword = () => {
     return (
         <div className="forgot-password-page">
             <Alert 
-            sx={{right: showMessage ? '-5px' : '-100%'}} 
+            sx={{right: showMessage ? '-5px' : '-200%'}} 
             className='alert-message-success' icon={<CheckIcon fontSize="inherit" />} severity="success">
                     we`ve resent the confirmation ot email, Check your inbox.
                 <span className='success-line' style={{ width: showMessage && '100%' }}></span>

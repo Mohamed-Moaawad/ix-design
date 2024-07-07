@@ -107,7 +107,7 @@ const [loader, setLoader] = useState(false)
             >
                 <Paper elevation={4} sx={{p:2 , width:'100%'}}>
                     <form className='form'>
-                    <img className='small-logo' src="images/Logo/logo-text.png" alt="logo" />
+                    <img className='small-logo' src="/images/Logo/logo-text.png" alt="logo" />
                         
                         
                         <h3>Sign in</h3>

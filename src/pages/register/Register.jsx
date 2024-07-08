@@ -17,7 +17,7 @@ const Register = () => {
         <Box className="register-page" sx={{flexGrow:1}}>
             <Grid container sx={{height:'100%'}}>
                 <Grid item sm={5} className='grid-item grid-logo-image'>
-                    <img src="images/Logo/logo-text-w.png" alt="logo" />
+                    <img src="/images/Logo/logo-text-w.png" alt="logo" />
                 </Grid>
                 <Grid item xs={12} sm={7}  className='grid-item'>
                     {location.pathname === "/register"  && <SignUp />}

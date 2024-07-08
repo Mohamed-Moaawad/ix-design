@@ -21,6 +21,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
+import { FormHelperText } from '@mui/material';
 
 
 
@@ -36,6 +37,11 @@ const AddPost = () => {
     const [type, setType] = useState('');
     const [image, setImage] = useState('');
 
+    const [titleError, setTitleError] = useState(false);
+    const [titleErrorMss, setTitleErrorMss] = useState('');
+    const [typeError, setTypeError] = useState(false);
+    const [typeErrorMss, setTypeErrorMss] = useState('');
+
     // Function Upload Image
     const handleUpload = (e)=>{
         setImageName(e.target.files[0].name)
@@ -47,9 +53,9 @@ const AddPost = () => {
             getDownloadURL(data.ref).then((val)=>{
                 setImage(val)
             })
+            setOpenInputs(false)
         })
 
-        setOpenInputs(false)
 
     }
 
@@ -58,7 +64,15 @@ const AddPost = () => {
     
     // Function create post firebase
     const createPost = async(e) => {
-        console.log('Waiting...')
+
+        if(title.trim() === ''){
+            setTitleError(true)
+            setTitleErrorMss('Please Enter title')
+        }else if(type === ''){
+            setTypeError(true)
+            setTypeErrorMss('Please enter type')
+        }else{
+
         await addDoc(collection(db, 'Posts'),{
             id: user.uid,
             title,
@@ -73,12 +87,13 @@ const AddPost = () => {
                 photo: user.photoURL ? user.photoURL : user.displayName,
             },
         })
-        console.log('Done...')
 
         setTitle('')
         setType('')
         setImage('')
         setImageName('')
+        }
+        
     };
 
     const navigate = useNavigate()
@@ -101,8 +116,13 @@ const AddPost = () => {
                             <form>
                                 <TextField id="outlined-basic" label="Title" variant="outlined"
                                     value={title}
-                                    onChange={(e)=> setTitle(e.target.value.toLowerCase())}
+                                    onChange={(e)=> {
+                                        setTitle(e.target.value.toLowerCase())
+                                        setTitleError(false)
+                                    }}
                                     disabled={openInputs}
+                                    helperText={titleErrorMss}
+                                    error={titleError}
                                 />
     
                                 <FormControl fullWidth>
@@ -112,14 +132,19 @@ const AddPost = () => {
                                     id="demo-simple-select"
                                     value={type}
                                     label="Age"
-                                    onChange={(e)=> setType(e.target.value)}
+                                    onChange={(e)=> {
+                                        setType(e.target.value)
+                                        setTypeError(false)
+                                    }}
                                     disabled={openInputs}
+                                    error={typeError}
                                     >
                                         <MenuItem value='photo'>photo</MenuItem>
                                         <MenuItem value='background'>background</MenuItem>
                                         <MenuItem value='logo'>logo</MenuItem>
                                         <MenuItem value='vector'>vector</MenuItem>
                                     </Select>
+                                    {typeError && <FormHelperText style={{color:'var(--delete-color)'}}>{typeErrorMss}</FormHelperText>}
                                 </FormControl>
                             </form>
                         </Grid>

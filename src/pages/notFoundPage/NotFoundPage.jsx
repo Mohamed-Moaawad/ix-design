@@ -13,7 +13,7 @@ const NotFoundPage = () => {
                 <Grid container sx={{alignItems:'center', justifyItems:'center'}}>
                     <Grid item xs={12} className='grid-item'>
                         <div className="img">
-                            <img src="images/404/Oops! 404 Error with a broken robot-amico.svg" alt="404" />
+                            <img src="/images/404/Oops! 404 Error with a broken robot-amico.svg" alt="404" />
                         </div>
                     </Grid>
                     <Grid item xs={12} className='grid-item'>

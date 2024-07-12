@@ -1,0 +1,37 @@
+.posts-component .all-posts{
+    columns:6;
+    column-gap:20px; 
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.posts-component .all-posts div.box-post-item{
+    width: 100%;
+    margin-bottom: 10px;
+    break-inside: avoid;
+
+}
+
+@media only screen and (max-width:1350px ){
+    .posts-component .all-posts{
+        columns:5;
+    }
+}
+
+@media only screen and (max-width: 1100px ){
+    .posts-component .all-posts{
+        columns:4;
+    }
+}
+
+@media only screen and (max-width:900px ){
+    .posts-component .all-posts{
+        columns:3;
+    }
+}
+
+@media only screen and (max-width:700px ){
+    .posts-component .all-posts{
+        columns:2;
+    }
+}

@@ -156,13 +156,13 @@ const AllPosts = ({navData}) => {
   if (value) {
     return (
       <div className="posts-component">
-        <Grid container spacing={2}>
+        <div className="all-posts" >
           {value.docs.map((item, index) => (
-            <Grid key={index} item xs={6} md={3} lg={2}>
+            <div className="box-post-item" key={index}>
               <PostItem item={item} />
-            </Grid>
+            </div>
           ))}
-        </Grid>
+        </div>
       </div>
     );
   }

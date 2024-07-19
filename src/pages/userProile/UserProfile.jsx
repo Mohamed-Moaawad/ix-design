@@ -150,7 +150,7 @@ const UserProfile = () => {
                                 <Button variant="contained" 
                                     sx={{background: 'var(--main-color)'}}
                                     onClick={addfollow} >
-                                        {inFollow ? 'friend' : 'Follow +'}
+                                        {inFollow ? 'unFollow' : 'Follow +'}
                                     </Button>
                             </div>
                         </div>

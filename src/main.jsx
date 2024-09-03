@@ -18,7 +18,6 @@ import UserProfile from './pages/userProile/UserProfile';
 import NotFoundPage from './pages/notFoundPage/NotFoundPage';
 
 
-
 const router = createBrowserRouter([
   {
     path: '/',
